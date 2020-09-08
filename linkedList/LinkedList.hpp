@@ -43,12 +43,11 @@ bool LinkedList<T>::search(T value) const
 	
 	while (temp != NULL) {
 
-		if (temp->key == value) return true;
+		if (temp-> == value) {isFound = true;}
 
-		temp = temp->next;
+		temp = temp->m_next;
 	}
-	return false;
-}
+	isFound = false;
 	
 
 	/** TODO 
