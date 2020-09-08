@@ -108,7 +108,7 @@ bool LinkedList<T>::removeBack()
 
 	//if  empty, return
 	if (m_front == NULL) {
-	isRemoved = true;
+		return(false);
 	}
 	
 	//if only one item, remove single node
@@ -118,7 +118,7 @@ bool LinkedList<T>::removeBack()
 	}
 
 
-	Node<T>* lastNode = nullptr;
+	//Node<T>* lastNode = nullptr;
 	Node<T>* secondintoLast = m_front;
 	
 	while(secondintoLast->getNext()->getNext() != NULL) {
@@ -127,14 +127,12 @@ bool LinkedList<T>::removeBack()
 	
 	delete (secondintoLast->getNext());
 
-	secondintoLast->setNext() = NULL;
+	secondintoLast->setNext(NULL);
 	isRemoved = true;
 
 	//update size
 	m_size--;
-	/** TODO 
-		Fix this method
-	*/
+	//FIXED
 
 	return(isRemoved);
 }	
